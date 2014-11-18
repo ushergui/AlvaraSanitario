@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+				<table>
+					
+						<h2>Lista de Empresas</h2>
+
+                
+                        <tr>
+                                
+                                
+                                <th>Razao Social</th>
+                                <th>Nome Fantasia</th>
+                                <th>Endereco</th>
+								<th>Objetivo do Contrato</th>
+                                <th>Data do Alvara</th>
+                        </tr>
+					
+                {% for  razao in object_list %}
+				
+                        <tr>
+                                <td>{{ razao.razao }}</td>
+                                <td>{{ razao.fantasia }}</td>
+                                <td>{{ razao.endereco }}</td>
+								<td>{{ razao.objetivo }}</td>
+                                <td>{{ razao.alvara|date:"d/m/Y" }}</td>
+                        </tr>
+                {% empty %}
+                        <li>Sem itens na lista.</li>
+                {% endfor %}
+                </table>
+{% endblock content %}

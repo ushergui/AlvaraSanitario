@@ -2,9 +2,9 @@
 
 {% block content %}
 
-
-				<table>
-					
+<div id="tableFluxo" class="table-responsive">
+				<table class="table table-striped">
+					<thead>
 						<h2>Lista de Empresas</h2>
 
                 
@@ -17,7 +17,7 @@
 								<th>Objetivo do Contrato</th>
                                 <th>Data do Alvara</th>
                         </tr>
-					
+					</thead>
                 {% for  razao in object_list %}
 				
                         <tr>

@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
+
 {% block content %}
-	
-        <form action="" method="POST">
+	<div class="form-group">	
+
+        <form role="form" class="form-horizontal" action="" method="POST">
 		
                 {% csrf_token %}
                 {{ form.as_p }}
 				
-                <button type="submit">Cadastrar</button>
-				
+                <button type="submit" class="btn btn-success">Cadastrar</button>
+				</div>
         </form>
-		
 {% endblock content %}

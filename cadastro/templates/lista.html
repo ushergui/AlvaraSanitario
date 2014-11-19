@@ -1,21 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load i18n %}
 
 <div id="tableFluxo" class="table-responsive">
 				<table class="table table-striped">
 					<thead>
-						<h2>Lista de Empresas</h2>
+						<h2>{% trans "Lista de Empresas" %}</h2>
 
-                
-                        <tr>
-                                
-                                
-                                <th>Razao Social</th>
-                                <th>Nome Fantasia</th>
-                                <th>Endereco</th>
-								<th>Objetivo do Contrato</th>
-                                <th>Data do Alvara</th>
+						<tr>
+                                <th>{% trans "Razao Social" %}</th>
+                                <th>{% trans "Nome Fantasia" %}</th>
+                                <th>{% trans "Endereco" %}</th>
+                                <th>{% trans "Objetivo do Contrato" %}</th>
+                                <th>{% trans "Data do Alvara" %}</th>
                         </tr>
 					</thead>
                 {% for  razao in object_list %}

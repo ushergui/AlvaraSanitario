@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
 {% block content %}
+{% load i18n %}
 	<div class="form-group">	
 
         <form role="form" class="form-horizontal" action="" method="POST">
@@ -8,7 +8,7 @@
                 {% csrf_token %}
                 {{ form.as_p }}
 				
-                <button type="submit" class="btn btn-success">Cadastrar</button>
+                <button type="submit" class="btn btn-success">{% trans "Cadastrar" %}</button>
 				</div>
         </form>
 {% endblock content %}

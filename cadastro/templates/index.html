@@ -1,12 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-        
+{% load i18n %}       
 		
-<h2> Vigilância Sanitária</h2>
+<h2> {% trans "Vigilância Sanitária" %}</h2>
 		</br>
 		<p>
-		{% "Controle de datas de vencimento de Alvará Sanitário" %}
+		{% trans "Controle de datas de vencimento de Alvará Sanitário" %}
 		</p>
+		<a href="#" onclick="document.setLangEnglish.submit();return false;">Inglês</a>  <a href="#" onclick="document.setLangPortugues.submit();return false;">Português</a>
 		
-		<br />
+		<form name="setLangEnglish" action="/i18n/setlang/" method="POST">
+			{% csrf_token %}
+			<input name="next" type="hidden" value="/" />
+			<input type="hidden" name="language" value="en" />
+		</form>
+		
+		<form name="setLangPortugues" action="/i18n/setlang/" method="POST">
+			{% csrf_token %}
+			<input name="next" type="hidden" value="/" />
+			<input type="hidden" name="language" value="pt-br" />
+		</form>
+<br />
+<br />
+
+		
 {% endblock content %}
